@@ -8,7 +8,7 @@ https://youtu.be/pqivnzmSbq4?list=PL2_aWCzGMAwLz3g66WrxFGSXvSsvyfzCO
 
 i) Time complexity for this recursion: 
 
-1) loop length of Num -> transfer to list -> O(n)
+1) loop length of Num + sum operation -> transfer to list -> 2 * O(n)  
 2) base condtion: if len(s) == 1
     -> when len(s) == 1? -> number of list s is 1 
     -> sum of list s is from [0, 9] -> when ???
@@ -28,3 +28,26 @@ def addNum(num):
 class Solution(object):
     def addDigits(self, num):
         return addNum(num)
+'''
+#### iteration function:
+
+class Solution(object):
+    def addDigits(self, num):
+        tmp = num
+        while(True):
+            
+            l = list([ int(x) for x in str(tmp) ])
+            if(len(l) == 1  ):
+                return sum(l)
+            else:
+                tmp = sum(l)
+#or this:
+class Solution(object):
+    def addDigits(self, num):
+        tmp = num
+        while(len(list([ int(x) for x in str(tmp) ]))!= 1):
+                tmp = sum(list([ int(x) for x in str(tmp) ]))
+        return sum(list([ int(x) for x in str(tmp) ]))                
+                        
+        
+'''        
