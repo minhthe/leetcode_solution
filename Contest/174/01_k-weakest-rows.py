@@ -1,3 +1,18 @@
+'''
+***Using enumrate(mat) to having the index
+
+
+ans = []
+for i, x in enumerate(mat):
+	count = Counter(mat[i])
+	ans.append((count[1], i))
+
+ans.sort(key=lambda x :x[0])
+
+new_ans = [x[1] for x in ans]
+return new_ans[:k]
+
+'''
 class Solution(object):
     def kWeakestRows(self, mat, k):
         """
