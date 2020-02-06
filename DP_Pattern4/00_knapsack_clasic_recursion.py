@@ -21,6 +21,7 @@ if __name__ == '__main__':
 		if(pos == 0 ):
 			if (W >= items[0].weight):			
 				memo[pos] = items[0].profit
+				rst.append(items[0])
 				return memo[pos]
 			else:
 				memo[pos] = 0
@@ -33,9 +34,13 @@ if __name__ == '__main__':
 
 			notpick = f(items, pos-1, W , rst, memo ) 
 			memo[pos] = max(pick, notpick)
+			if pick > notpick: rst.append(items[pos])
+ 			#else: rst.append(notpick)
 			return memo[pos]
 		
 	rst = []			
 	m = len(items)
 	memo = {}
 	print(f(items,m -1 , W, rst, memo))
+	for item in rst:
+		print(item.weight, '--', item.profit)
