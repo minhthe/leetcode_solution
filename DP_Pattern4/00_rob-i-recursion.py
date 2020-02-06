@@ -20,23 +20,24 @@ https://youtu.be/pqivnzmSbq4?list=PL2_aWCzGMAwLz3g66WrxFGSXvSsvyfzCO
 
 '''
 class Solution(object):
-	def rob(self, nums):		
-		def f(s, pos, nums, arr, m, n, memo):
-			if(pos in memo):
-				return memo[pos]
-			if (n==0): return 0 
-			if (n ==1) : 
-				memo[pos] = arr[0]
-				return memo[pos]
-			if (n == 2): 
-				memo[pos] = max(arr)
-				return memo[pos]
-			if (n == 3):
-				memo[pos] = max(arr[0] + arr[2], arr[1] )
-				return memo[pos] 
-			a = arr[0]  + f(s, pos + 2, nums, nums[pos + 2:], m, len( nums[pos + 2:]), memo)
-			b = arr[1]  + f(s , pos + 3, nums, nums[pos + 3:], m, len( nums[pos + 3:]), memo)
-			memo[pos] = max(a, b)
-			return memo[pos]
-		s, pos, nums, arr, m, n , memo = 0, 0, nums, nums, len(nums), len(nums), {}
-		return f(s, pos, nums, arr, m, n, memo)
+	def rob(self, nums):
+		m = len(nums)
+		if m == 0 : return 0
+		memo = {}		
+		def f(m, nums, memo):
+			if m in memo: return memo[m]
+			if(m == 0)		:
+				memo[m] = nums[0]	
+				return memo[m]
+			if(m == 1):
+				memo[m] = max(nums[0],nums[1])
+				return memo[m]
+			if(m == 2):
+				memo[m]= max(nums[0]+nums[2],nums[1])
+				return memo[m]
+			else:
+				a = nums[m] + f(m-2, nums, memo)
+				b = nums[m-1] + f(m-3, nums, memo)
+				memo[m] = max(a,b)
+				return memo[m]
+		return f(m -1, nums, memo)
