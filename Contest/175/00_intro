@@ -1,0 +1,18 @@
+'''
+https://leetcode.com/contest/weekly-contest-175
+NO task AC in 4 tasks: 
+
+task 1 using BS but wrong in some case
+tas 2 string handle
+task 3: sorting??
+task 4 hard with the matrix - find the max student that not copy-plagiarism
+
+
+***Lession 1:
+edge case: 
+1) the negative value : -20*2 = -40 | wrong with position when checking BS
+2) [0,0] 0*2 = 0
+3) check the set have value 0 -> always return True-> so reject this 0 value out of the set
+
+
+'''
