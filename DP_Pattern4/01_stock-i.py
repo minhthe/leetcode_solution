@@ -1,5 +1,6 @@
 '''
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+AC in 18 minutes
 
 ****Aproach: iteration the for loop
 
