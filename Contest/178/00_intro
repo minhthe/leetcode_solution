@@ -1,0 +1,11 @@
+#https://leetcode.com/contest/weekly-contest-178
+
+# ac 2 of 4
+
+# 1: count the smaller element in array -> 3 ways: 2loops vs bs vs hash
+
+# 2: votes -> 2 way -> priority queue  vs hash 
+
+# 3: recursion check bst contain the linked list
+
+# 4 hard
