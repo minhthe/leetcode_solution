@@ -22,6 +22,21 @@ def isHappy(self, n: int) -> bool:
                 res = sum([dict[x] for x in str(res)])
                 if res == 1: return True
 
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        
+        mp = {}
+        
+        arr = list(int(x) * int(x) for x in list(str(n)))
+        
+        tmp = sum(arr)
+        
+        while(tmp!=1):
+            if(  tmp in mp): return False
+            else: mp[tmp] = True
+            arr =  list(int(x) * int(x) for x in list(str(tmp)))
+            tmp = sum(arr)
+        return True
 '''
 
 class Solution(object):
