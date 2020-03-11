@@ -1,5 +1,9 @@
 '''
 https://leetcode.com/problems/linked-list-cycle/
+
+***complexity:
+time:  O(n)
+space: O(1)
 '''
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
